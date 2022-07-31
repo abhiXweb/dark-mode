@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import darkImg from "./assets/icons/night-mode.png"
+import lightImg from "./assets/icons/sun.png"
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  function toggleDarkMode() {
+    setDarkMode(prevMode => !prevMode)
+  }
+
+  const darkStyle = {
+    backgroundColor: 'black',
+    color: 'white'
+  }
+
+  const lightStyle = {
+    backgroundColor: 'white',
+    color: 'black'
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={darkMode ? darkStyle : lightStyle}>
+      <h1>Dark Mode using ReactJS</h1>
+      <img src={darkMode ? lightImg : darkImg} alt="Dark Mode" onClick={toggleDarkMode} />
     </div>
   );
 }
