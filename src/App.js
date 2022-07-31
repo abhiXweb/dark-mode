@@ -3,7 +3,7 @@ import darkImg from "./assets/icons/night-mode.png"
 import lightImg from "./assets/icons/sun.png"
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState()
 
   function toggleDarkMode() {
     setDarkMode(prevMode => !prevMode)
@@ -11,12 +11,14 @@ function App() {
 
   const darkStyle = {
     backgroundColor: 'black',
-    color: 'white'
+    color: 'white',
+    transition: '.5s'
   }
 
   const lightStyle = {
     backgroundColor: 'white',
-    color: 'black'
+    color: 'black',
+    transition: '.5s'
   }
 
   return (
