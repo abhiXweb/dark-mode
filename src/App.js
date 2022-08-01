@@ -10,14 +10,14 @@ function App() {
   }
 
   const darkStyle = {
-    backgroundColor: 'black',
+    backgroundColor: '#282c34',
     color: 'white',
     transition: '.5s'
   }
 
   const lightStyle = {
     backgroundColor: 'white',
-    color: 'black',
+    color: '#282c34',
     transition: '.5s'
   }
 
