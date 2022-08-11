@@ -3,7 +3,9 @@ import darkImg from "./assets/icons/night-mode.png"
 import lightImg from "./assets/icons/sun.png"
 
 function App() {
-  const [darkMode, setDarkMode] = useState()
+  let checkMode = localStorage.getItem("darkmode");
+  let prevMode = (checkMode !== null && checkMode === "light") ? false : true
+  const [darkMode, setDarkMode] = useState(checkMode != null ? prevMode : "")
 
   function toggleDarkMode() {
     setDarkMode(prevMode => !prevMode)
@@ -21,6 +23,11 @@ function App() {
     transition: '.5s'
   }
 
+  if (darkMode) {
+    localStorage.setItem("darkmode", "dark")
+  } else {
+    localStorage.setItem("darkmode", "light")
+  }
   return (
     <div className="App" style={darkMode ? darkStyle : lightStyle}>
       <h1>Dark Mode using ReactJS</h1>
