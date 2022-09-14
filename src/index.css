@@ -17,7 +17,7 @@ code {
     monospace;
 }
 
-.App{
+.App {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -26,6 +26,18 @@ code {
   gap: 1rem;
 }
 
-.App img{
+.App img {
   cursor: pointer;
+}
+
+.darkStyle {
+  background-color: #282c34;
+  color: white;
+  transition: .5s;
+}
+
+.lightStyle {
+  background-color: white;
+  color: #282c34;
+  transition: .5s;
 }
