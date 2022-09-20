@@ -20,15 +20,8 @@ function App() {
     setDarkMode(prevMode => !prevMode)
   }
 
-  let darkClass;
-  if (darkMode) {
-    darkClass = "darkStyle"
-  } else {
-    darkClass = "lightStyle"
-  }
-
   return (
-    <div className={`App ${darkClass}`}>
+    <div className={`App ${darkMode ? 'darkStyle' : 'lightStyle'}`}>
       <h1>Dark Mode using ReactJS</h1>
       <img src={darkMode ? lightImg : darkImg} alt={darkMode ? "Dark Mode" : "Light Mode"} onClick={toggleDarkMode} />
     </div>
